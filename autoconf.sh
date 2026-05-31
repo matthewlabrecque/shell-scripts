@@ -91,7 +91,11 @@ go install golang.org/x/tools/gopls@latest
 sudo pacman -Rns fuzzel alacritty --noconfirm
 
 # Move config files to GNU Stow
-git clone
+cd ~
+git clone https://codeberg.org/matthewlabrecque/dotfiles.git .
+cd dotfiles
+stow *
+cd ~
 
 # --- Set ZSH as default shell ---
 if [[ "$SHELL" != *"zsh"* ]]; then
