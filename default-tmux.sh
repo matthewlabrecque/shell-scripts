@@ -8,8 +8,8 @@ if [ $? != 0 ]; then
     ### Create session ###
     tmux new-session -ds $session_name
 	tmux new-window -t $session_name:1
-	tmux rename-window -t $session_name:1 ZETTLEKASTEN
-	tmux send-keys -t $session_name:1 'cd ~/zettlekasten' C-m 
+	tmux rename-window -t $session_name:1 ZETTELKASTEN
+	tmux send-keys -t $session_name:1 'cd ~/zettelkasten' C-m 
 	tmux send-keys -t $session_name:1 'clear' C-m
 
 	tmux new-window -t $session_name:2

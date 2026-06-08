@@ -19,6 +19,7 @@ PACMAN=(
   "eog"
   "fastfetch"
   "fd"
+  "fuzzel"
   "fzf"
   "foot"
   "foot-terminfo"
@@ -41,6 +42,8 @@ PACMAN=(
   "ttf-cascadia-code-nerd"
   "typst"
   "obs-studio"
+  "rclone"
+  "tailscale"
   "vim"
   "vlc"
   "vlc-plugins-all"
@@ -53,15 +56,10 @@ PACMAN=(
 
 # AUR packages
 AUR=(
-  "elephant"
-  "elephant-archlinuxpkgs"
-  "elephant-niriactions"
-  "elephant-calc"
-  "feishin-bin"
   "helium-browser-bin"
+  "jellyfin-tui"
   "thinkfan"
   "vesktop"
-  "walker"
 )
 
 # Set up AUR helper (yay)
@@ -75,6 +73,12 @@ fi
 # Install packages
 sudo pacman -S --needed --noconfirm "${PACMAN[@]}"
 yay -S --needed --noconfirm "${AUR[@]}"
+
+# Install Zettk-CLI terminal interface
+# This must be run after packages are installed to ensure Go is installed
+if command -v go -version &>/dev/null; then
+		go install github.com/matthewlabrecque/zettk-cli@latest
+fi
 
 # Oh-My-Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
