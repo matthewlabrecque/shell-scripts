@@ -27,6 +27,7 @@ PACMAN=(
   "go"
   "impala"
   "julia"
+  "krita"
   "lazygit"
   "mullvad-vpn"
   "nautilus"
@@ -100,6 +101,9 @@ git clone https://codeberg.org/matthewlabrecque/dotfiles.git .
 cd dotfiles
 stow *
 cd ~
+
+# Create additional directories
+mkdir -p ~/scripts ~/university
 
 # --- Set ZSH as default shell ---
 if [[ "$SHELL" != *"zsh"* ]]; then
